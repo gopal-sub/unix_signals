@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 )
 
 
@@ -14,7 +15,7 @@ func main(){
     fmt.Println("PID:", os.Getpid())
     fmt.Println("SIGTERM is being ignored")
 
-    select {}
+	time.Sleep(5*time.Minute)
 
 
 }
