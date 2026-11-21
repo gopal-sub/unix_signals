@@ -5,21 +5,16 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"time"
 )
 
 
 func main(){
-	// Sigchan := make(chan os.Signal, 1)	
-	signal.Ignore(syscall.SIGKILL)
+    signal.Ignore(syscall.SIGTERM)
 
-	fmt.Printf("the process stated %v", os.Getpid())
+    fmt.Println("PID:", os.Getpid())
+    fmt.Println("SIGTERM is being ignored")
 
-
-	fmt.Printf("signal recieved: %v", sig)
-	time.Sleep(4*time.Second)
-	fmt.Println("process will be dead")
-	select{}
+    select {}
 
 
 }
